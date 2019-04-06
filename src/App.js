@@ -11,13 +11,13 @@ class App extends Component {
     ],
   };
 
-  nameSwitchHandler = (event) => {
+  nameSwitchHandler = (newName, newNameTwo, newNameThree) => {
     // console.log(event.target);
     this.setState({
       persons: [
-        { name: 'Bill Jackson', age: 33 },
-        { name: 'Stephanie', age: 29 },
-        { name: 'Travis Bacon', age: 38 },
+        { name: newName, age: 33 },
+        { name: newNameTwo, age: 29 },
+        { name: newNameThree, age: 38 },
       ],
     });
   };
@@ -26,11 +26,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Testing React Lawl</h1>
-        <button onClick={this.nameSwitchHandler}>Switch Name</button>
+        <button onClick={()=>this.nameSwitchHandler('Johnny Boy!', 'Stephy', 'Travvy')}>Switch Name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
         <Person
-          nameSwitchHandler={this.nameSwitchHandler}
+          nameSwitchHandler={this.nameSwitchHandler.bind(this, '**JONATHAN**', '***STEPHANIE***', '<---TRAVIS--->')}
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}
         >
