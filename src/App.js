@@ -12,7 +12,6 @@ class App extends Component {
   };
 
   nameSwitchHandler = (newName, newNameTwo, newNameThree) => {
-    // console.log(event.target);
     this.setState({
       persons: [
         { name: newName, age: 33 },
@@ -25,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Testing React Lawl</h1>
+        <h1>React Course :)</h1>
         <button onClick={()=>this.nameSwitchHandler('Johnny Boy!', 'Stephy', 'Travvy')}>Switch Name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
