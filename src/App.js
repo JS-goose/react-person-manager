@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Course :)</h1>
-        <button onClick={()=>this.nameSwitchHandler('Johnny Boy!', 'Stephy', 'Travvy')}>Switch Name</button>
+        <button style = {style} onClick={()=>this.nameSwitchHandler('Johnny Boy!', 'Stephy', 'Travvy')}>Switch Name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
         <Person
@@ -39,6 +39,16 @@ class App extends Component {
       </div>
     );
   }
+}
+
+const style = {
+  padding: '5px',
+  borderRadius: '3px',
+  border: 'none',
+  boxShadow: '1px 1px 3px lightblue',
+  color: 'white',
+  backgroundColor: 'gray',
+  cursor: 'pointer',
 }
 
 export default App;
