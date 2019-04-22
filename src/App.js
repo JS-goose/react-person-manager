@@ -22,8 +22,13 @@ class App extends Component {
   };
 
   handleInputName = (event) => {
-    console.log(event.target);
-  };
+    this.setState({
+      persons: [
+        { name: "Jonathan", age: 33 },
+        { name: "Stephanie", age: 29 },
+        { name: event.target.value, age: 38 },
+      ],
+    });  };
 
   render() {  
     return (
@@ -46,6 +51,7 @@ class App extends Component {
           )}
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}
+          handleInputName={this.handleInputName}
         >
           {/*Anything placed between component tags can be accessed via props.children*/}
           My hobbies: Gaming
