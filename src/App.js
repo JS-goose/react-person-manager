@@ -64,10 +64,8 @@ class App extends Component {
 const style = {
   padding: "5px",
   borderRadius: "3px",
-  border: "none",
+  border: "1px solid #ccc",
   boxShadow: "1px 1px 3px lightblue",
-  color: "white",
-  backgroundColor: "gray",
   cursor: "pointer",
 };
 
