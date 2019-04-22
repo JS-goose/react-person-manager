@@ -1,0 +1,8 @@
+.person-container {
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 3px #eee;
+    padding: 10px 0;
+    margin: 16px auto;
+    width: 40%;
+    text-align: center;
+}

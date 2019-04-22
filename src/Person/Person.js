@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Person.css';
 
 const person = (props) => {
   return (
@@ -8,7 +9,7 @@ const person = (props) => {
       </p>
       {/* props.children allows me to render content that is placed between the opening and closing tags of my component in App.js */}
       <p>{props.children}</p>
-      <input type="text" onChange={props.handleInputName} placeholder={`i.e. ${props.name}`}/>
+      <input type="text" onChange={props.handleInputName} placeholder={`i.e. ${props.name}`} />
     </div>
   );
 };
