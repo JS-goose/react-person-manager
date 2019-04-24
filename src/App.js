@@ -28,11 +28,14 @@ class App extends Component {
         { name: 'Stephanie', age: 29 },
         { name: event.target.value, age: 38 },
       ],
+      showPersons: false,
     });
   };
 
   togglePersonsDiv = () => {
-    console.error(`the method is working!`)
+    this.setState({
+      showPersons: !this.state.showPersons,
+    })
   }
 
   render() {
@@ -45,7 +48,7 @@ class App extends Component {
         >
           Switch Name
         </button>
-        <div>
+        {this.state.showPersons ? <div>
           <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
           <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
           <Person
@@ -62,7 +65,7 @@ class App extends Component {
             {/*Anything placed between component tags can be accessed via props.children*/}
             My hobbies: Gaming
           </Person>
-        </div>
+        </div> : 'Persons div is hidden'}
       </div>
     );
   }
