@@ -39,14 +39,10 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div className="App">
-        <h1>React Course :)</h1>
-        <button style={style} onClick={this.togglePersonsDiv}>
-          Show/Hide Persons
-        </button>
-        {this.state.showPersons ? (
-          <div>
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+      <div>
             <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
             <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
             <Person
@@ -64,9 +60,25 @@ class App extends Component {
               My hobbies: Gaming
             </Person>
           </div>
-        ) : (
-          <div>Persons div is hidden</div>
-        )}
+      )
+    } else {
+      const style = {
+        paddingTop: 5,
+        fontWeight: 900,
+        fontSize: '1.3rem',
+        color: 'orangered',
+      }
+      persons = (
+      <div style={style}>Persons div is hidden</div>
+      )
+    }
+    return (
+      <div className="App">
+        <h1>React Course :)</h1>
+        <button style={style} onClick={this.togglePersonsDiv}>
+          Show/Hide Persons
+        </button>
+        {persons}
       </div>
     );
   }
