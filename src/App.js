@@ -35,37 +35,38 @@ class App extends Component {
   togglePersonsDiv = () => {
     this.setState({
       showPersons: !this.state.showPersons,
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <h1>React Course :)</h1>
-        <button
-          style={style}
-          onClick={this.togglePersonsDiv}
-        >
-          Switch Name
+        <button style={style} onClick={this.togglePersonsDiv}>
+          Show/Hide Persons
         </button>
-        {this.state.showPersons ? <div>
-          <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-          <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
-          <Person
-            nameSwitchHandler={this.nameSwitchHandler.bind(
-              this,
-              '**JONATHAN**',
-              '***STEPHANIE***',
-              '<---TRAVIS--->'
-            )}
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age}
-            handleInputName={this.handleInputName}
-          >
-            {/*Anything placed between component tags can be accessed via props.children*/}
-            My hobbies: Gaming
-          </Person>
-        </div> : 'Persons div is hidden'}
+        {this.state.showPersons ? (
+          <div>
+            <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+            <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
+            <Person
+              nameSwitchHandler={this.nameSwitchHandler.bind(
+                this,
+                '**JONATHAN**',
+                '***STEPHANIE***',
+                '<---TRAVIS--->'
+              )}
+              name={this.state.persons[2].name}
+              age={this.state.persons[2].age}
+              handleInputName={this.handleInputName}
+            >
+              {/*Anything placed between component tags can be accessed via props.children*/}
+              My hobbies: Gaming
+            </Person>
+          </div>
+        ) : (
+          <div>Persons div is hidden</div>
+        )}
       </div>
     );
   }
