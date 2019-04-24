@@ -31,6 +31,10 @@ class App extends Component {
     });
   };
 
+  togglePersonsDiv = () => {
+    console.error(`the method is working!`)
+  }
+
   render() {
     return (
       <div className="App">
