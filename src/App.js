@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import "./App.css";
-import Person from "./Person/Person";
+import React, { Component } from 'react';
+import './App.css';
+import Person from './Person/Person';
 
 class App extends Component {
   state = {
     persons: [
-      { name: "Jonathan", age: 33 },
-      { name: "Stephanie", age: 29 },
-      { name: "Travis", age: 38 },
+      { name: 'Jonathan', age: 33 },
+      { name: 'Stephanie', age: 29 },
+      { name: 'Travis', age: 38 },
     ],
   };
 
@@ -24,49 +24,52 @@ class App extends Component {
   handleInputName = (event) => {
     this.setState({
       persons: [
-        { name: "Jonathan", age: 33 },
-        { name: "Stephanie", age: 29 },
+        { name: 'Jonathan', age: 33 },
+        { name: 'Stephanie', age: 29 },
         { name: event.target.value, age: 38 },
       ],
-    });  };
+    });
+  };
 
-  render() {  
+  render() {
     return (
       <div className="App">
         <h1>React Course :)</h1>
         <button
           style={style}
-          onClick={() => this.nameSwitchHandler("Johnny Boy!", "Stephy", "Travvy")}
+          onClick={this.togglePersonsDiv}
         >
           Switch Name
         </button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
-        <Person
-          nameSwitchHandler={this.nameSwitchHandler.bind(
-            this,
-            "**JONATHAN**",
-            "***STEPHANIE***",
-            "<---TRAVIS--->"
-          )}
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-          handleInputName={this.handleInputName}
-        >
-          {/*Anything placed between component tags can be accessed via props.children*/}
-          My hobbies: Gaming
-        </Person>
+        <div>
+          <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+          <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
+          <Person
+            nameSwitchHandler={this.nameSwitchHandler.bind(
+              this,
+              '**JONATHAN**',
+              '***STEPHANIE***',
+              '<---TRAVIS--->'
+            )}
+            name={this.state.persons[2].name}
+            age={this.state.persons[2].age}
+            handleInputName={this.handleInputName}
+          >
+            {/*Anything placed between component tags can be accessed via props.children*/}
+            My hobbies: Gaming
+          </Person>
+        </div>
       </div>
     );
   }
 }
 
 const style = {
-  padding: "5px",
-  borderRadius: "3px",
-  border: "1px solid #ccc",
-  boxShadow: "1px 1px 3px lightblue",
-  cursor: "pointer",
+  padding: '5px',
+  borderRadius: '3px',
+  border: '1px solid #ccc',
+  boxShadow: '1px 1px 3px lightblue',
+  cursor: 'pointer',
 };
 
 export default App;
