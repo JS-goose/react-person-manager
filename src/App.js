@@ -42,35 +42,20 @@ class App extends Component {
     let persons = null;
     if (this.state.showPersons) {
       persons = (
-      <div>
-            <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-            <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
-            <Person
-              nameSwitchHandler={this.nameSwitchHandler.bind(
-                this,
-                '**JONATHAN**',
-                '***STEPHANIE***',
-                '<---TRAVIS--->'
-              )}
-              name={this.state.persons[2].name}
-              age={this.state.persons[2].age}
-              handleInputName={this.handleInputName}
-            >
-              {/*Anything placed between component tags can be accessed via props.children*/}
-              My hobbies: Gaming
-            </Person>
-          </div>
-      )
+        <div>
+          {this.state.persons.map((person) => (
+            <Person name={person.name} age={person.age}/>
+          ))}
+        </div>
+      );
     } else {
       const style = {
         paddingTop: 5,
         fontWeight: 900,
         fontSize: '1.3rem',
         color: 'orangered',
-      }
-      persons = (
-      <div style={style}>Persons div is hidden</div>
-      )
+      };
+      persons = <div style={style}>Persons div is hidden</div>;
     }
     return (
       <div className="App">
