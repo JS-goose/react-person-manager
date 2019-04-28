@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Course :)</h1>
-        <button style={style} onClick={this.togglePersonsDiv}>
+        <button style={buttonStyle} onClick={this.togglePersonsDiv}>
           Show/Hide Persons
         </button>
         {persons}
@@ -69,7 +69,7 @@ class App extends Component {
   }
 }
 
-const style = {
+const buttonStyle = {
   padding: '5px',
   borderRadius: '3px',
   border: '1px solid #ccc',
