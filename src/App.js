@@ -59,6 +59,9 @@ class App extends Component {
         <button style={buttonStyle} onClick={this.togglePersonsDiv}>
           Show/Hide Persons
         </button>
+        <button style={buttonStyle} onClick={this.restorePersons}>
+          Restore Persons
+        </button>
         {persons}
       </div>
     );
@@ -71,6 +74,7 @@ const buttonStyle = {
   border: '1px solid #ccc',
   boxShadow: '1px 1px 3px lightblue',
   cursor: 'pointer',
+  marginRight: 8,
 };
 
 export default App;
