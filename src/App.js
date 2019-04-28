@@ -18,7 +18,7 @@ class App extends Component {
         { name: event.target.value, age: 29 },
         { name: event.target.value, age: 38 },
       ],
-      showPersons: false,
+      showPersons: true,
     });
   };
 
@@ -43,7 +43,8 @@ class App extends Component {
             <Person
               name={person.name}
               age={person.age}
-              click={() => this.deletePersonHandler(index)}
+              // click={() => this.deletePersonHandler(index)}
+              handleInputName={this.handleInputName}
             />
           ))}
         </div>
