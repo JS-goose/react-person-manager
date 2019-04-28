@@ -10,9 +10,17 @@ const person = (props) => {
       {/* props.children allows me to render content that is placed between the opening and closing tags of my component in App.js */}
       <p>{props.children}</p>
       <input type="text" onChange={props.handleInputName} placeholder={`i.e. ${props.name}`} />
-      <button onClick={props.click}>Delete Person</button>
+      <button style={buttonStyle} onClick={props.click}>Delete Person</button>
     </div>
   );
 };
 
+const buttonStyle = {
+  padding: 3,
+  marginLeft: 3,
+  borderRadius: 3,
+  border: '1px solid #ccc',
+  boxShadow: '1px 1px 3px lightblue',
+  cursor: 'pointer',
+}
 export default person;
