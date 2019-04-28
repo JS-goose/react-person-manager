@@ -22,6 +22,10 @@ class App extends Component {
     });
   };
 
+  deletePersonHandler = () => {
+    this.state.slice();
+  }
+  
   togglePersonsDiv = () => {
     this.setState({
       showPersons: !this.state.showPersons,
