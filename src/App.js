@@ -14,8 +14,8 @@ class App extends Component {
   handleInputName = (event) => {
     this.setState({
       persons: [
-        { name: 'Jonathan', age: 33 },
-        { name: 'Stephanie', age: 29 },
+        { name: event.target.value, age: 33 },
+        { name: event.target.value, age: 29 },
         { name: event.target.value, age: 38 },
       ],
       showPersons: false,
