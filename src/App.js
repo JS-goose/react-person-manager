@@ -25,7 +25,7 @@ class App extends Component {
   deletePersonHandler = () => {
     this.state.slice();
   }
-  
+
   togglePersonsDiv = () => {
     this.setState({
       showPersons: !this.state.showPersons,
@@ -43,13 +43,13 @@ class App extends Component {
         </div>
       );
     } else {
-      const style = {
+      const personStyle = {
         paddingTop: 5,
         fontWeight: 900,
         fontSize: '1.3rem',
         color: 'orangered',
       };
-      persons = <div style={style}>Persons div is hidden</div>;
+      persons = <div style={personStyle}>Persons div is hidden</div>;
     }
     return (
       <div className="App">
