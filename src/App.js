@@ -12,11 +12,11 @@ class App extends Component {
   };
 
   handleInputName = (event, id) => {
-    const personIndex = this.state.persons.findIndex(person => {
+    const personIndex = this.state.persons.findIndex((person) => {
       return person.id === id;
     });
 
-    const person = {...this.state.persons[personIndex]};
+    const person = { ...this.state.persons[personIndex] };
     person.name = event.target.value;
 
     const updatedPersons = [...this.state.persons];
@@ -37,6 +37,10 @@ class App extends Component {
     this.setState({
       showPersons: !this.state.showPersons,
     });
+  };
+
+  restorePersons = () => {
+    window.location = window.location;
   };
 
   render() {
