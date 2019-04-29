@@ -12,12 +12,17 @@ class App extends Component {
   };
 
   handleInputName = (event, id) => {
+    const personIndex = this.state.persons.findIndex(person => {
+      return person.id === id;
+    });
+
+    const person = {...this.state.persons[personIndex]};
+    person.name = event.target.value;
+
+    const updatedPersons = [...this.state.persons];
+    updatedPersons[personIndex] = person;
     this.setState({
-      persons: [
-        { name: event.target.value, age: 33 },
-        { name: event.target.value, age: 29 },
-        { name: event.target.value, age: 38 },
-      ],
+      persons: updatedPersons,
       showPersons: true,
     });
   };
