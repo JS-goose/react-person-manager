@@ -44,7 +44,7 @@ class App extends Component {
               key={person.id}
               name={person.name}
               age={person.age}
-              click={() => this.deletePersonHandler(index)}
+              deletePerson={() => this.deletePersonHandler(index)}
               handleInputName={this.handleInputName}
             />
           ))}
