@@ -19,8 +19,8 @@ const buttonStyle = {
   padding: 3,
   marginLeft: 3,
   borderRadius: 3,
-  border: '1px solid #ccc',
-  boxShadow: '1px 1px 3px lightblue',
+  border: '1px solid #2e2e2e',
+  boxShadow: '1px 1px 3px #636363',
   cursor: 'pointer',
 }
 export default person;

@@ -76,8 +76,8 @@ class App extends Component {
 const buttonStyle = {
   padding: '5px',
   borderRadius: '3px',
-  border: '1px solid #ccc',
-  boxShadow: '1px 1px 3px lightblue',
+  border: '1px solid #eee',
+  boxShadow: '1px 1px 3px #636363',
   cursor: 'pointer',
   marginRight: 8,
 };
