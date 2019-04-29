@@ -11,7 +11,7 @@ class App extends Component {
     ],
   };
 
-  handleInputName = (event) => {
+  handleInputName = (event, id) => {
     this.setState({
       persons: [
         { name: event.target.value, age: 33 },
@@ -45,7 +45,7 @@ class App extends Component {
               name={person.name}
               age={person.age}
               deletePerson={() => this.deletePersonHandler(index)}
-              handleInputName={this.handleInputName}
+              handleInputName={(event) => this.handleInputName(event, person.id)}
             />
           ))}
         </div>
