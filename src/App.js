@@ -53,6 +53,11 @@ class App extends Component {
       cursor: 'pointer',
       marginRight: 8,
       fontWeight: 900,
+      ':hover': {
+        color: 'orangered',
+        transform: 'scale(1.02)',
+        boxShadow: '1px 1px 3px #000',
+      }
     };
 
     let persons = null;
@@ -101,10 +106,10 @@ class App extends Component {
       
       <div className="App">
         <h1 className={classes.join(' ')}>React Course :)</h1>
-        <button style={buttonStyle} onClick={this.togglePersonsDiv}>
+        <button style={buttonStyle} onClick={this.togglePersonsDiv} key={1}>
           Show/Hide Persons
         </button>
-        <button style={buttonStyle} onClick={this.restorePersons}>
+        <button style={buttonStyle} onClick={this.restorePersons} key={2}>
           Restore Persons
         </button>
         {persons}
