@@ -91,6 +91,10 @@ class App extends Component {
       classes.push('yellow');
     }
 
+    if (this.state.persons.length < 3) {
+      document.querySelector('h1').innerHTML = '😭 React Course 😨'
+    }
+
   
     return (
       
