@@ -81,9 +81,21 @@ class App extends Component {
       };
       persons = <div style={personStyle}>Persons div is hidden</div>;
     }
+    const classes = [];
+    
+    if (this.state.persons.length < 1) {
+      classes.push('strike');
+    }
+
+    if (this.state.persons.length < 2) {
+      classes.push('bold');
+    }
+
+  
     return (
+      
       <div className="App">
-        <h1>React Course :)</h1>
+        <h1 className={classes}>React Course :)</h1>
         <button style={buttonStyle} onClick={this.togglePersonsDiv}>
           Show/Hide Persons
         </button>
