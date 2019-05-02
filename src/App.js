@@ -88,14 +88,14 @@ class App extends Component {
     }
 
     if (this.state.persons.length < 2) {
-      classes.push('bold');
+      classes.push('yellow');
     }
 
   
     return (
       
       <div className="App">
-        <h1 className={classes}>React Course :)</h1>
+        <h1 className={classes.join(' ')}>React Course :)</h1>
         <button style={buttonStyle} onClick={this.togglePersonsDiv}>
           Show/Hide Persons
         </button>
