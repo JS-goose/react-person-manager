@@ -44,6 +44,16 @@ class App extends Component {
   };
 
   render() {
+    const buttonStyle = {
+      padding: '5px',
+      borderRadius: '3px',
+      border: '1px solid #eee',
+      boxShadow: '1px 1px 3px #636363',
+      cursor: 'pointer',
+      marginRight: 8,
+      fontWeight: 900,
+    };
+
     let persons = null;
     if (this.state.showPersons) {
       persons = (
@@ -59,6 +69,9 @@ class App extends Component {
           ))}
         </div>
       );
+      buttonStyle.backgroundColor = 'white';
+      buttonStyle.color = 'coral';
+      
     } else {
       const personStyle = {
         paddingTop: 5,
@@ -82,14 +95,5 @@ class App extends Component {
     );
   }
 }
-
-const buttonStyle = {
-  padding: '5px',
-  borderRadius: '3px',
-  border: '1px solid #eee',
-  boxShadow: '1px 1px 3px #636363',
-  cursor: 'pointer',
-  marginRight: 8,
-};
 
 export default App;
