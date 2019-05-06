@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -98,7 +98,7 @@ class App extends Component {
   
     return (
       
-      <div className="App">
+      <div className={classes.App}>
         <h1 className={classes.join(' ')}>React Course :)</h1>
         <button style={buttonStyle} onClick={this.togglePersonsDiv} key={1}>
           Show/Hide Persons
