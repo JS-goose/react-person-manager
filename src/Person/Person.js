@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import classes from './Person.css';
 
 const person = (props) => {
+  const rando = Math.random()
+
+  if (rando > 0.7) {
+    throw new Error('Something went wrong inside Perons component')
+  }
+  
   return (
     <div className={classes.personContainer}>
       <p>
