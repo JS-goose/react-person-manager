@@ -44,16 +44,6 @@ class App extends Component {
   };
 
   render() {
-    const buttonStyle = {
-      padding: '5px',
-      borderRadius: '3px',
-      border: '1px solid #eee',
-      boxShadow: '1px 1px 3px #636363',
-      cursor: 'pointer',
-      marginRight: 8,
-      fontWeight: 900,
-    };
-
     let persons = null;
     if (this.state.showPersons) {
       persons = (
@@ -69,8 +59,6 @@ class App extends Component {
           ))}
         </div>
       );
-      buttonStyle.backgroundColor = 'white';
-      buttonStyle.color = 'coral';
       
     } else {
       const personStyle = {
@@ -100,10 +88,10 @@ class App extends Component {
       
       <div className={classes.App}>
         <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
-        <button style={buttonStyle} onClick={this.togglePersonsDiv} key={1}>
+        <button className={classes.buttonStyle} onClick={this.togglePersonsDiv} key={1}>
           Show/Hide Persons
         </button>
-        <button style={buttonStyle} onClick={this.restorePersons} key={2}>
+        <button className={classes.buttonStyle} onClick={this.restorePersons} key={2}>
           Restore Persons
         </button>
         {persons}
