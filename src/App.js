@@ -81,14 +81,14 @@ class App extends Component {
       };
       persons = <div style={personStyle}>Persons div is hidden</div>;
     }
-    const classes = [];
+    const assignedClasses = [];
     
     if (this.state.persons.length < 1) {
-      classes.push('strike');
+      assignedClasses.push(classes.strike);
     }
 
     if (this.state.persons.length < 2) {
-      classes.push('yellow');
+      assignedClasses.push(classes.yellow);
     }
 
     if (this.state.persons.length < 3) {
@@ -99,7 +99,7 @@ class App extends Component {
     return (
       
       <div className={classes.App}>
-        <h1 className={classes.join(' ')}>React Course :)</h1>
+        <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
         <button style={buttonStyle} onClick={this.togglePersonsDiv} key={1}>
           Show/Hide Persons
         </button>
