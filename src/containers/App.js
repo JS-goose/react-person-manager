@@ -6,9 +6,8 @@ import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 class App extends Component {
   state = {
     persons: [
-      { id: 126, name: 'T-Money', age: 7 },
-      { id: 124, name: 'Stephanie', age: 29 },
       { id: 123, name: 'Jonathan', age: 33 },
+      { id: 124, name: 'Stephanie', age: 29 },
       { id: 125, name: 'Travis', age: 38 },
 
     ],
