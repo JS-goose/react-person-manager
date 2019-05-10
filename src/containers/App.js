@@ -68,13 +68,6 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-        {/* <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
-        <button className={classes.buttonStyle} onClick={this.togglePersonsDiv} key={1}>
-          Show/Hide Persons
-        </button>
-        <button className={classes.buttonStyle} onClick={this.restorePersons} key={2}>
-          Restore Persons
-        </button> */}
         <Cockpit
           persons={this.state.persons}
           togglePersonsDiv={this.togglePersonsDiv}
