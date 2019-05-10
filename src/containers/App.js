@@ -65,19 +65,6 @@ class App extends Component {
       };
       persons = <div style={personStyle}>Persons div is hidden</div>;
     }
-    const assignedClasses = [];
-
-    if (this.state.persons.length < 1) {
-      assignedClasses.push(classes.strike);
-    }
-
-    if (this.state.persons.length < 2) {
-      assignedClasses.push(classes.yellow);
-    }
-
-    if (this.state.persons.length < 3) {
-      document.querySelector('h1').innerHTML = '😭 React Course 😨';
-    }
 
     return (
       <div className={classes.App}>
@@ -88,7 +75,11 @@ class App extends Component {
         <button className={classes.buttonStyle} onClick={this.restorePersons} key={2}>
           Restore Persons
         </button> */}
-        <Cockpit togglePersonsDiv={this.togglePersonsDiv} restorePersons={this.restorePersons}/>
+        <Cockpit
+          persons={this.state.persons}
+          togglePersonsDiv={this.togglePersonsDiv}
+          restorePersons={this.restorePersons}
+        />
         {persons}
       </div>
     );
