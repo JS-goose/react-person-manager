@@ -16,12 +16,12 @@ const cockpit = (props) => {
   }
 
   return (
-    <div>
+    <div className={classes.Cockpit}>
       <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
-      <button className={classes.buttonStyle} onClick={props.togglePersonsDiv} key={1}>
+      <button  onClick={props.togglePersonsDiv} key={1}>
         Show/Hide Persons
       </button>
-      <button className={classes.buttonStyle} onClick={props.restorePersons} key={2}>
+      <button  onClick={props.restorePersons} key={2}>
         Restore Persons
       </button>
     </div>
