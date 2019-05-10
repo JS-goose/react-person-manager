@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import People from '../components/People/People';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   state = {
@@ -80,13 +81,14 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-        <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
+        {/* <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
         <button className={classes.buttonStyle} onClick={this.togglePersonsDiv} key={1}>
           Show/Hide Persons
         </button>
         <button className={classes.buttonStyle} onClick={this.restorePersons} key={2}>
           Restore Persons
-        </button>
+        </button> */}
+        <Cockpit togglePersonsDiv={this.togglePersonsDiv} restorePersons={this.restorePersons}/>
         {persons}
       </div>
     );
