@@ -48,13 +48,11 @@ class App extends Component {
     let persons = null;
     if (this.state.showPersons) {
       persons = (
-        <div>
-          <People
-            persons={this.state.persons}
-            deletePersonHandler={this.deletePersonHandler}
-            handleInputName={this.handleInputName}
-          />
-        </div>
+        <People
+          persons={this.state.persons}
+          deletePersonHandler={this.deletePersonHandler}
+          handleInputName={this.handleInputName}
+        />
       );
     } else {
       const personStyle = {
