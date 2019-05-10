@@ -10,7 +10,14 @@ class App extends Component {
       { id: 124, name: 'Stephanie', age: 29 },
       { id: 125, name: 'Travis', age: 38 },
     ],
+    users: [],
   };
+
+  componentDidMount = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    this.setState({users: data});
+  }
 
   handleInputName = (event, id) => {
     const personIndex = this.state.persons.findIndex((person) => {
