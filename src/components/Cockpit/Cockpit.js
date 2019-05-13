@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import classes from './Cockpit.css';
 
 const cockpit = (props) => {
+  // This will run for every render cycle, including the first one
+  useEffect(() => {
+    console.log(`[Cockpit.js] useEffect`);
+    // ? Can do HTTP requests inside here as well
+  });
+
   const assignedClasses = [];
   if (props.persons.length < 1) {
     assignedClasses.push(classes.strike);
@@ -18,10 +24,10 @@ const cockpit = (props) => {
   return (
     <div className={classes.Cockpit}>
       <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
-      <button  onClick={props.togglePersonsDiv} key={1}>
+      <button onClick={props.togglePersonsDiv} key={1}>
         Show/Hide Persons
       </button>
-      <button  onClick={props.restorePersons} key={2}>
+      <button onClick={props.restorePersons} key={2}>
         Restore Persons
       </button>
     </div>
