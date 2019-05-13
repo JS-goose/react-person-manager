@@ -10,7 +10,9 @@ const cockpit = (props) => {
     setTimeout(() => {
       alert('Saved data to cloud!');
     }, 1000);
-  }, [props.persons]);
+    //If I want this to run on the first render ONLY, I  would pass an empty array here.  If I want it to run
+    // once something updates, I pass in those values to the array.
+  }, []);
 
   const assignedClasses = [];
   if (props.persons.length < 1) {
