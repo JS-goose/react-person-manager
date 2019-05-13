@@ -3,10 +3,14 @@ import classes from './Cockpit.css';
 
 const cockpit = (props) => {
   // This will run for every render cycle, including the first one
+  // I can also make multiple useEffect calls if need be
   useEffect(() => {
     console.log(`[Cockpit.js] useEffect`);
     // ? Can do HTTP requests inside here as well
-  });
+    setTimeout(() => {
+      alert('Saved data to cloud!');
+    }, 1000);
+  }, [props.persons]);
 
   const assignedClasses = [];
   if (props.persons.length < 1) {
