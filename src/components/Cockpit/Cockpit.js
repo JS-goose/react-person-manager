@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.css';
-const assignedClasses = [];
 
 const cockpit = (props) => {
+  const assignedClasses = [];
   if (props.persons.length < 1) {
     assignedClasses.push(classes.strike);
   }
