@@ -14,9 +14,23 @@ class App extends Component {
   };
 
   componentWillMount = async () => {
+    console.log(`[App.js] componentwillMount`);
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await response.json();
-    this.setState({users: data});
+    this.setState({ users: data });
+  };
+
+  componentDidMount() {
+    console.log(`[App.js] componentDidMount`);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(`[App.js] shouldComponentUpdate`);
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log(`[App.js] componentDidUpdate`);
   }
 
   handleInputName = (event, id) => {
