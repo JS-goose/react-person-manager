@@ -11,6 +11,7 @@ class App extends Component {
       { id: 125, name: 'Travis', age: 38 },
     ],
     users: [],
+    showCockpit: true,
   };
 
   componentWillMount = async () => {
@@ -87,11 +88,14 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
+      <button onClick = {()=> {this.setState({showCockpit: false})}}>Remove Cockpit</button>
+        {this.state.showCockpit ? 
         <Cockpit
           persons={this.state.persons}
           togglePersonsDiv={this.togglePersonsDiv}
           restorePersons={this.restorePersons}
-        />
+        /> : null }
+      
         {persons}
       </div>
     );
