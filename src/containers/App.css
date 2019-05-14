@@ -6,11 +6,3 @@ html {
   height: 100%;
   background: rgb(61, 96, 212);
 }
-
-.strike {
-  text-decoration: line-through;
-}
-
-.yellow{
-  color: rgb(201, 201, 0);
-}

@@ -1,14 +1,22 @@
 .Cockpit button {
-    padding: 10px;
-    border-radius: 3px;
-    border: 1px solid black;
-    box-shadow: 1px 1px 3px #636363;
-    cursor: pointer;
-    margin-right: 8px;
-    font-weight: 900;
-  }
-  
-  .Cockpit button:hover {
-    color: coral;
-    box-shadow: 2px 2px 4px rgb(70, 69, 69);
-  }
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 3px #636363;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: 900;
+}
+
+.Cockpit button:hover {
+  color: coral;
+  box-shadow: 2px 2px 4px rgb(70, 69, 69);
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.yellow {
+  color: rgb(201, 201, 0);
+}

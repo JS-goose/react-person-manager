@@ -11,12 +11,27 @@ class App extends Component {
       { id: 125, name: 'Travis', age: 38 },
     ],
     users: [],
+    showCockpit: true,
   };
 
-  componentDidMount = async () => {
+  componentWillMount = async () => {
+    console.log(`[App.js] componentwillMount`);
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await response.json();
-    this.setState({users: data});
+    this.setState({ users: data });
+  };
+
+  componentDidMount() {
+    console.log(`[App.js] componentDidMount`);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(`[App.js] shouldComponentUpdate`);
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log(`[App.js] componentDidUpdate`);
   }
 
   handleInputName = (event, id) => {
@@ -73,11 +88,14 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
+      <button onClick = {()=> {this.setState({showCockpit: false})}}>Remove Cockpit</button>
+        {this.state.showCockpit ? 
         <Cockpit
           persons={this.state.persons}
           togglePersonsDiv={this.togglePersonsDiv}
           restorePersons={this.restorePersons}
-        />
+        /> : null }
+      
         {persons}
       </div>
     );
