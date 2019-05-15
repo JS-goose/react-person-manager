@@ -9,10 +9,15 @@ class Persons extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log(`[People.js] shouldComponentUpdate`);
-    if (nextProps.persons !== this.props.persons) {
+    if (
+      // This checks to see if all properties passed to this component have changed and if so it updates if not no updated occurs
+      nextProps.persons !== this.props.persons ||
+      nextProps.deletePerson !== this.props.deletePerson ||
+      nextProps.handleInputName !== this.props.handleInputName
+    ) {
       return true;
     } else {
-      return false
+      return false;
     }
   }
 
