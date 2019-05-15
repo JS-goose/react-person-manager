@@ -26,15 +26,15 @@ const cockpit = (props) => {
   });
 
   const assignedClasses = [];
-  if (props.persons.length < 1) {
+  if (props.personsLength < 1) {
     assignedClasses.push(classes.strike);
   }
 
-  if (props.persons.length < 2) {
+  if (props.personsLength < 2) {
     assignedClasses.push(classes.yellow);
   }
 
-  if (props.persons.length < 3) {
+  if (props.personsLength < 3) {
     document.querySelector('h1').innerHTML = '😭 React Course 😨';
   }
 
@@ -51,4 +51,5 @@ const cockpit = (props) => {
   );
 };
 
-export default cockpit;
+//React.memo() is like shouldComponentUpdate for functional components and will only trigger a rerender if something changes within the component
+export default React.memo(cockpit);
