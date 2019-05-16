@@ -3,6 +3,17 @@ import classes from './Person.css';
 import PropTypes from 'prop-types';
 
 class Person extends Component{
+  constructor(props) {
+    super(props); 
+    this.myInputRef = React.createRef();
+    
+  }
+
+  componentDidMount() {
+    // Must use current here because the element that myInputRef points to is now stored in the current reference
+    this.myInputRef.current.focus();
+  }
+  
   render() {
     return (
       <div className={classes.personContainer}>
@@ -11,7 +22,7 @@ class Person extends Component{
         </p>
         {/* props.children allows me to render content that is placed between the opening and closing tags of my component in App.js */}
         <p>{this.props.children}</p>
-        <input type="text" onChange={this.props.handleInputName} placeholder={`i.e. ${this.props.name}`} />
+        <input ref = {this.myInputRef} type="text" onChange={this.props.handleInputName} placeholder={`i.e. ${this.props.name}`} />
         <button style={buttonStyle} onClick={this.props.deletePerson}>Delete Person</button>
       </div>
     );
