@@ -27,7 +27,7 @@ const buttonStyle = {
   cursor: 'pointer',
 }
 
-Person.prototypes = {
+Person.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   handleInputName: PropTypes.func,
