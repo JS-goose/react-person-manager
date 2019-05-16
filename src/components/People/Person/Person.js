@@ -26,4 +26,12 @@ const buttonStyle = {
   boxShadow: '1px 1px 3px #636363',
   cursor: 'pointer',
 }
+
+Person.prototypes = {
+  name: PropTypes.string,
+  age: PropTypes.number,
+  handleInputName: PropTypes.func,
+  deletePerson: PropTypes.func,
+}
+
 export default Person;
