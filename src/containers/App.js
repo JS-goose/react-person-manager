@@ -12,6 +12,7 @@ class App extends Component {
     ],
     users: [],
     showCockpit: true,
+    changeCounter: 0,
   };
 
   componentWillMount = async () => {
@@ -44,9 +45,12 @@ class App extends Component {
 
     const updatedPersons = [...this.state.persons];
     updatedPersons[personIndex] = person;
-    this.setState({
+    this.setState((prevState, props) => {
+      return {
       persons: updatedPersons,
       showPersons: true,
+      changeCounter: prevState.changeCounter + 1,
+      }
     });
   };
 
