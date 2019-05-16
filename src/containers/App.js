@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   state = {
