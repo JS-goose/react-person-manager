@@ -28,10 +28,10 @@ class Person extends Component {
             onChange={this.props.handleInputName}
             placeholder={`i.e. ${this.props.name}`}
           />
-          <button onClick={this.props.deletePerson}>
+          <button className={classes.personButtons} onClick={this.props.deletePerson}>
             Delete Person
           </button>
-          <button login={this.props.login}>Log in</button>
+          <button className={classes.personButtons} login={this.props.login}>Log in</button>
         </div>
       </React.Fragment>
     );
