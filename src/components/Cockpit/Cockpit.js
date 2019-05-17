@@ -9,20 +9,22 @@ const cockpit = (props) => {
   // I can also make multiple useEffect calls if need be
   useEffect(() => {
     console.log(`[Cockpit.js] useEffect`);
+    buttonRef.current.focus ();
     // ? Can do HTTP requests inside here as well
-    setTimeout(() => {
-      alert('Saved data to cloud!');
-    }, 1000);
-    // This returned function will run before the main useEffect function but after the first render cycle
-    return () => {
-      console.log(`[Cockpit.js] cleanup in useEffect..`);
-    };
-    //If I want this to run on the first render ONLY, I  would pass an empty array here.  If I want it to run
-    // once something updates, I pass in those values to the array and this will run only when those are updated.
-  }, []);
+  //   setTimeout(() => {
+  //     alert('Saved data to cloud!');
+  //   }, 1000);
+    //* This returned function will run before the main useEffect function but after the first render cycle
+  //   return () => {
+  //     console.log(`[Cockpit.js] cleanup in useEffect..`);
+  //   };
+    //* If I want this to run on the first render ONLY, I  would pass an empty array here.  If I want it to run
+    //* once something updates, I pass in those values to the array and this will run only when those are updated.
+  // }, []);
+  });     
 
   useEffect(() => {
-    console.log(`[Cockpit.js] 2nd useEffect`);
+      console.log(`[Cockpit.js] 2nd useEffect`);
     return () => {
       console.log(`[Cockpit.js] cleanup in 2nd useEffect..`);
     };
