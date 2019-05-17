@@ -9,3 +9,16 @@
     background-color: rgb(228, 226, 226);
 }
 
+.personContainer button {
+  padding: 3;
+  margin-left: 3;
+  border-radius: 3;
+  border: 1px solid #2e2e2e;
+  box-shadow: 1px 1px 3px #636363;
+  cursor: pointer;
+}
+
+.personContainer button:hover {
+    color: red;
+    scale: 1;
+}

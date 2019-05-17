@@ -28,24 +28,15 @@ class Person extends Component {
             onChange={this.props.handleInputName}
             placeholder={`i.e. ${this.props.name}`}
           />
-          <button style={buttonStyle} onClick={this.props.deletePerson}>
+          <button onClick={this.props.deletePerson}>
             Delete Person
           </button>
-          <button style = {buttonStyle} login={this.props.login}>Log in</button>
+          <button login={this.props.login}>Log in</button>
         </div>
       </React.Fragment>
     );
   }
 }
-
-const buttonStyle = {
-  padding: 3,
-  marginLeft: 3,
-  borderRadius: 3,
-  border: "1px solid #2e2e2e",
-  boxShadow: "1px 1px 3px #636363",
-  cursor: "pointer",
-};
 
 Person.propTypes = {
   name: PropTypes.string,
