@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   state = {
@@ -12,6 +13,7 @@ class App extends Component {
     ],
     users: [],
     showCockpit: true,
+    changeCounter: 0,
   };
 
   componentWillMount = async () => {
@@ -44,9 +46,12 @@ class App extends Component {
 
     const updatedPersons = [...this.state.persons];
     updatedPersons[personIndex] = person;
-    this.setState({
+    this.setState((prevState, props) => {
+      return {
       persons: updatedPersons,
       showPersons: true,
+      changeCounter: prevState.changeCounter + 1,
+      }
     });
   };
 
@@ -91,7 +96,7 @@ class App extends Component {
       <button onClick = {()=> {this.setState({showCockpit: false})}}>Remove Cockpit</button>
         {this.state.showCockpit ? 
         <Cockpit
-          persons={this.state.persons}
+          persons={this.state.persons.length}
           togglePersonsDiv={this.togglePersonsDiv}
           restorePersons={this.restorePersons}
         /> : null }
