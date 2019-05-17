@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import classes from './Cockpit.css';
 
 const cockpit = (props) => {
+
+  const buttonRef = useRef(null);
+  
   // This will run for every render cycle, including the first one
   // I can also make multiple useEffect calls if need be
   useEffect(() => {
@@ -41,7 +44,7 @@ const cockpit = (props) => {
   return (
     <div className={classes.Cockpit}>
       <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
-      <button onClick={props.togglePersonsDiv} key={1}>
+      <button ref={buttonRef} onClick={props.togglePersonsDiv} key={1}>
         Show/Hide Persons
       </button>
       <button onClick={props.restorePersons} key={2}>
