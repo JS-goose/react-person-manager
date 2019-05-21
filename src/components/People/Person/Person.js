@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import classes from "./Person.css";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import classes from './Person.css';
+import PropTypes from 'prop-types';
 
 class Person extends Component {
   constructor(props) {
@@ -31,7 +31,6 @@ class Person extends Component {
           <button className={classes.personButtons} onClick={this.props.deletePerson}>
             Delete Person
           </button>
-          <button className={classes.personButtons} login={this.props.login}>Log in</button>
         </div>
       </React.Fragment>
     );
