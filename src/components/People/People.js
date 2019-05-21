@@ -7,19 +7,19 @@ class People extends Component {
   //   return state;
   // }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(`[People.js] shouldComponentUpdate`);
-    if (
-      // This checks to see if all properties passed to this component have changed and if so it updates if not no updated occurs
-      nextProps.persons !== this.props.persons ||
-      nextProps.deletePerson !== this.props.deletePerson ||
-      nextProps.handleInputName !== this.props.handleInputName
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log(`[People.js] shouldComponentUpdate`);
+  //   if (
+  //     // This checks to see if all properties passed to this component have changed and if so it updates if not no updated occurs
+  //     nextProps.persons !== this.props.persons ||
+  //     nextProps.deletePerson !== this.props.deletePerson ||
+  //     nextProps.handleInputName !== this.props.handleInputName
+  //   ) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log(`[People.js] getSnapshotBeforeUpdate`);
@@ -45,7 +45,7 @@ class People extends Component {
           age={person.age}
           deletePerson={() => this.props.deletePersonHandler(index)}
           handleInputName={(event) => this.props.handleInputName(event, person.id)}
-          login={this.props.loginHandler}
+          isLoggedIn={this.props.isLoggedIn}
         />
       );
     });

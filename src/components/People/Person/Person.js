@@ -17,6 +17,7 @@ class Person extends Component {
     return (
       <React.Fragment>
         <div className={classes.personContainer}>
+        {this.props.isLoggedIn ? <p>Logged In!</p> : <p>Not Logged In</p>}
           <p>
             I'm {this.props.name} and I am {this.props.age} years old!
           </p>

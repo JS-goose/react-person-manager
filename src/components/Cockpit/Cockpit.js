@@ -46,7 +46,7 @@ const cockpit = (props) => {
   return (
     <div className={classes.Cockpit}>
       <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
-      <button className={classes.personButtons} login={props.login}>Log in</button>
+      <button className={classes.personButtons} onClick={props.isLoggedIn}>Log in</button>
       <button ref={buttonRef} onClick={props.togglePersonsDiv} key={1}>
         Show/Hide Persons
       </button>

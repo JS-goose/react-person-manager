@@ -14,7 +14,7 @@ class App extends Component {
     users: [],
     showCockpit: true,
     changeCounter: 0,
-    loggedIn: false,
+    isLoggedIn: false,
   };
 
   componentWillMount = async () => {
@@ -73,7 +73,7 @@ class App extends Component {
   };
 
   loginHandler = () => {
-    this.setState({ loggedIn: true, });
+    this.setState({ isLoggedIn: true, });
   }
 
   render() {
@@ -84,7 +84,7 @@ class App extends Component {
           persons={this.state.persons}
           deletePersonHandler={this.deletePersonHandler}
           handleInputName={this.handleInputName}
-          login={this.loginHandler}
+          isLoggedIn={this.state.isLoggedIn}
         />
       );
     } else {
@@ -111,7 +111,7 @@ class App extends Component {
             persons={this.state.persons.length}
             togglePersonsDiv={this.togglePersonsDiv}
             restorePersons={this.restorePersons}
-            login={this.loginHandler}
+            isLoggedIn={this.loginHandler}
           />
         ) : null}
 
