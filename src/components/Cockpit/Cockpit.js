@@ -54,7 +54,7 @@ const cockpit = (props) => {
       </button>
       <AuthContext.Consumer>
         {(context) => (
-          <button className={classes.personButtons} onClick={context.isLoggedIn}>
+          <button className={classes.personButtons} onClick={context.loginMethod}>
             Log in
           </button>
         )}

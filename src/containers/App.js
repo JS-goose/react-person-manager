@@ -108,14 +108,14 @@ class App extends Component {
           Remove Cockpit
         </button>
         <AuthContext.Provider
-          value={{ isLoggedIn: this.state.isLoggedIn, login: this.loginHandler }}
+          value={{ isLoggedIn: this.state.isLoggedIn, loginMethod: this.loginHandler }}
         >
           {this.state.showCockpit ? (
             <Cockpit
               persons={this.state.persons.length}
               togglePersonsDiv={this.togglePersonsDiv}
               restorePersons={this.restorePersons}
-              isLoggedIn={this.loginHandler}
+              // isLoggedIn={this.loginHandler}
             />
           ) : null}
 
