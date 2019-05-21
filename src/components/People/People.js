@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Person from './Person/Person';
 
-class Persons extends Component {
+class People extends Component {
   // static getDerivedStateFromProps(props, state) {
   //   console.log(`[People.js] getDerivedStateFromProps`);
   //   return state;
@@ -52,4 +52,4 @@ class Persons extends Component {
   }
 }
 
-export default Persons;
+export default People;
