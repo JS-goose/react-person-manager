@@ -74,8 +74,8 @@ class App extends Component {
   };
 
   loginHandler = () => {
-    this.setState({ isLoggedIn: true, });
-  }
+    this.setState({ isLoggedIn: true });
+  };
 
   render() {
     let persons = null;
@@ -107,16 +107,21 @@ class App extends Component {
         >
           Remove Cockpit
         </button>
-        {this.state.showCockpit ? (
-          <Cockpit
-            persons={this.state.persons.length}
-            togglePersonsDiv={this.togglePersonsDiv}
-            restorePersons={this.restorePersons}
-            isLoggedIn={this.loginHandler}
-          />
-        ) : null}
+        <AuthContext.Provider
+          value={{ isLoggedIn: this.state.isLoggedIn, login: this.loginHandler }}
+        >
+          {this.state.showCockpit ? (
+            <Cockpit
+              persons={this.state.persons.length}
+              togglePersonsDiv={this.togglePersonsDiv}
+              restorePersons={this.restorePersons}
+              isLoggedIn={this.loginHandler}
+            />
+          ) : null}
 
-        {persons}
+          {persons}
+        </AuthContext.Provider>
+        >{' '}
       </div>
     );
   }
