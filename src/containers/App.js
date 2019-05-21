@@ -3,6 +3,7 @@ import classes from './App.css';
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
 import PropTypes from 'prop-types';
+import AuthContext from '../context/auth-context';
 
 class App extends Component {
   state = {
