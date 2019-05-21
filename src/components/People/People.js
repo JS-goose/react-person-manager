@@ -45,6 +45,7 @@ class Persons extends Component {
           age={person.age}
           deletePerson={() => this.props.deletePersonHandler(index)}
           handleInputName={(event) => this.props.handleInputName(event, person.id)}
+          login={this.props.loginHandler}
         />
       );
     });

@@ -14,6 +14,7 @@ class App extends Component {
     users: [],
     showCockpit: true,
     changeCounter: 0,
+    loggedIn: false,
   };
 
   componentWillMount = async () => {
@@ -71,6 +72,10 @@ class App extends Component {
     window.location = window.location;
   };
 
+  loginHandler = () => {
+    this.setState({ loggedIn: true, });
+  }
+
   render() {
     let persons = null;
     if (this.state.showPersons) {
@@ -79,6 +84,7 @@ class App extends Component {
           persons={this.state.persons}
           deletePersonHandler={this.deletePersonHandler}
           handleInputName={this.handleInputName}
+          login={this.loginHandler}
         />
       );
     } else {
@@ -105,6 +111,7 @@ class App extends Component {
             persons={this.state.persons.length}
             togglePersonsDiv={this.togglePersonsDiv}
             restorePersons={this.restorePersons}
+            login={this.loginHandler}
           />
         ) : null}
 
