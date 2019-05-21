@@ -48,10 +48,10 @@ class App extends Component {
     updatedPersons[personIndex] = person;
     this.setState((prevState, props) => {
       return {
-      persons: updatedPersons,
-      showPersons: true,
-      changeCounter: prevState.changeCounter + 1,
-      }
+        persons: updatedPersons,
+        showPersons: true,
+        changeCounter: prevState.changeCounter + 1,
+      };
     });
   };
 
@@ -93,14 +93,21 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-      <button onClick = {()=> {this.setState({showCockpit: false})}}>Remove Cockpit</button>
-        {this.state.showCockpit ? 
-        <Cockpit
-          persons={this.state.persons.length}
-          togglePersonsDiv={this.togglePersonsDiv}
-          restorePersons={this.restorePersons}
-        /> : null }
-      
+        <button
+          onClick={() => {
+            this.setState({ showCockpit: false });
+          }}
+        >
+          Remove Cockpit
+        </button>
+        {this.state.showCockpit ? (
+          <Cockpit
+            persons={this.state.persons.length}
+            togglePersonsDiv={this.togglePersonsDiv}
+            restorePersons={this.restorePersons}
+          />
+        ) : null}
+
         {persons}
       </div>
     );
