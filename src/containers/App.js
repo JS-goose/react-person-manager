@@ -121,7 +121,6 @@ class App extends Component {
 
           {persons}
         </AuthContext.Provider>
-        >{' '}
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Person.css';
 import PropTypes from 'prop-types';
+import AuthContext from '../../../context/auth-context';
 
 class Person extends Component {
   constructor(props) {
@@ -16,8 +17,11 @@ class Person extends Component {
   render() {
     return (
       <React.Fragment>
+        <AuthContext.Consumer>
+          {//Consumer doesn't return JSX but a function that receives the context object 
+          (context) => context.isLoggedIn ? <p>Logged In!</p> : <p>Not Logged In</p>}
+        </AuthContext.Consumer>
         <div className={classes.personContainer}>
-        {this.props.isLoggedIn ? <p>Logged In!</p> : <p>Not Logged In</p>}
           <p>
             I'm {this.props.name} and I am {this.props.age} years old!
           </p>
