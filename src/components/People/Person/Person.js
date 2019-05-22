@@ -27,9 +27,9 @@ class Person extends Component {
       loggedInDisplay = (
         <React.Fragment>
           <p>Please Log In</p>
-          <label for="username">UserName: </label>
+          <label htmlFor="username">UserName: </label>
           <input id="username" placeholder="username" />
-          <label for="password"> Password: </label>
+          <label htmlFor="password"> Password: </label>
           <input id="password" placeholder="i.e. b@c0n!$Awesome" />
         </React.Fragment>
       );
@@ -48,7 +48,7 @@ class Person extends Component {
           </p>
           {/* props.children allows me to render content that is placed between the opening and closing tags of my component in App.js */}
           <p>{this.props.children}</p>
-          <label for="nameChangeInput">Change Name: </label>
+          <label htmlFor="nameChangeInput">Change Name: </label>
           <input
             id="nameChangeInput"
             ref={this.myInputRef}
