@@ -27,18 +27,17 @@ class Person extends Component {
       loggedInDisplay = (
         <React.Fragment>
           <p>Please Log In</p>
-          <form>
-            <label for="username">UserName: </label>
-            <input id="username" placeholder="username" />
-            <label for="password"> Password: </label>
-            <input id="password" placeholder="i.e. b@c0n!$Awesome" />
-          </form>
+          <label for="username">UserName: </label>
+          <input id="username" placeholder="username" />
+          <label for="password"> Password: </label>
+          <input id="password" placeholder="i.e. b@c0n!$Awesome" />
         </React.Fragment>
       );
     }
     return (
       <React.Fragment>
         <div className={classes.personContainer}>
+          <form className={classes.personForm}>
           {/* <AuthContext.Consumer>
           {//Consumer doesn't return JSX but a function that receives the context object
           (context) => (context.isLoggedIn ? <p>Logged In!</p> : <p>Please log in</p>)}
@@ -49,7 +48,9 @@ class Person extends Component {
           </p>
           {/* props.children allows me to render content that is placed between the opening and closing tags of my component in App.js */}
           <p>{this.props.children}</p>
+          <label for="nameChangeInput">Change Name: </label>
           <input
+            id="nameChangeInput"
             ref={this.myInputRef}
             type="text"
             onChange={this.props.handleInputName}
@@ -58,6 +59,7 @@ class Person extends Component {
           <button className={classes.personButtons} onClick={this.props.deletePerson}>
             Delete Person
           </button>
+          </form>
         </div>
       </React.Fragment>
     );
