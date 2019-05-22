@@ -19,13 +19,31 @@ class Person extends Component {
   }
 
   render() {
+    let loggedInDisplay = null;
+
+    if (this.context.isLoggedIn) {
+      loggedInDisplay = <p>Logged in!</p>;
+    } else {
+      loggedInDisplay = (
+        <React.Fragment>
+          <p>Please Log In</p>
+          <form>
+            <label for="username">UserName: </label>
+            <input id="username" placeholder="username" />
+            <label for="password"> Password: </label>
+            <input id="password" placeholder="i.e. b@c0n!$Awesome" />
+          </form>
+        </React.Fragment>
+      );
+    }
     return (
       <React.Fragment>
         <div className={classes.personContainer}>
-        <AuthContext.Consumer>
+          {/* <AuthContext.Consumer>
           {//Consumer doesn't return JSX but a function that receives the context object
           (context) => (context.isLoggedIn ? <p>Logged In!</p> : <p>Please log in</p>)}
-        </AuthContext.Consumer>
+        </AuthContext.Consumer> */}
+          {loggedInDisplay}
           <p>
             I'm {this.props.name} and I am {this.props.age} years old!
           </p>
