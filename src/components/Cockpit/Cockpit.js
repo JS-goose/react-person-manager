@@ -55,6 +55,7 @@ const cockpit = (props) => {
       <AuthContext.Consumer>
         {(context) => (
           <button className={classes.personButtons} onClick={context.loginMethod}>
+            {/*the on click method now refers to the context loginMethod, which in turn points to the loginMethod created in App.js*/}
             Log in
           </button>
         )}
