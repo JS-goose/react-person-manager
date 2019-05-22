@@ -4,6 +4,7 @@ import AuthContext from '../../context/auth-context';
 
 const cockpit = (props) => {
   const buttonRef = useRef(null);
+  const authContext = useContext(AuthContext);
 
   // This will run for every render cycle, including the first one
   // I can also make multiple useEffect calls if need be
@@ -52,14 +53,14 @@ const cockpit = (props) => {
       <button onClick={props.restorePersons} key={2}>
         Restore Persons
       </button>
-      <AuthContext.Consumer>
-        {(context) => (
-          <button className={classes.personButtons} onClick={context.loginMethod}>
+      {/* <AuthContext.Consumer>
+        {(context) => ( */}
+          <button className={classes.personButtons} onClick={authContext.loginMethod}>
             {/*the on click method now refers to the context loginMethod, which in turn points to the loginMethod created in App.js*/}
             Log in
           </button>
-        )}
-      </AuthContext.Consumer>
+        {/* )}
+      </AuthContext.Consumer> */}
     </div>
   );
 };
