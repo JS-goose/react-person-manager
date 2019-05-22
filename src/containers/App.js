@@ -102,10 +102,10 @@ class App extends Component {
       <div className={classes.App}>
         <button
           onClick={() => {
-            this.setState({ showCockpit: false });
+            this.setState({ showCockpit: !this.state.showCockpit });
           }}
         >
-          Remove Cockpit
+          Show/Hide Cockpit
         </button>
         <AuthContext.Provider
           value={{ isLoggedIn: this.state.isLoggedIn, loginMethod: this.loginHandler }}
