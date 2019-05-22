@@ -115,7 +115,6 @@ class App extends Component {
               persons={this.state.persons.length}
               togglePersonsDiv={this.togglePersonsDiv}
               restorePersons={this.restorePersons}
-              // isLoggedIn={this.loginHandler}
             />
           ) : null}
 

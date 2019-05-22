@@ -17,11 +17,11 @@ class Person extends Component {
   render() {
     return (
       <React.Fragment>
-        <AuthContext.Consumer>
-          {//Consumer doesn't return JSX but a function that receives the context object 
-          (context) => context.isLoggedIn ? <p>Logged In!</p> : <p>Not Logged In</p>}
-        </AuthContext.Consumer>
         <div className={classes.personContainer}>
+        <AuthContext.Consumer>
+          {//Consumer doesn't return JSX but a function that receives the context object
+          (context) => (context.isLoggedIn ? <p>Logged In!</p> : <p>Please log in</p>)}
+        </AuthContext.Consumer>
           <p>
             I'm {this.props.name} and I am {this.props.age} years old!
           </p>
