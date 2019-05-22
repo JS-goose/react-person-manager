@@ -9,9 +9,13 @@ class Person extends Component {
     this.myInputRef = React.createRef();
   }
 
+  //*Adding this property allows me to access context outside of the JSX essentially connecting this class based component to my context behind the scenes*/
+  static contextType = AuthContext;
+
   componentDidMount() {
     // Must use current here because the element that myInputRef points to is now stored in the current reference
     this.myInputRef.current.focus();
+    console.log(this.context.isLoggedIn);
   }
 
   render() {
