@@ -46,7 +46,7 @@ const cockpit = (props) => {
 
   return (
     <div className={classes.Cockpit}>
-      <h1 className={assignedClasses.join(' ')}>React Course :)</h1>
+      <h1 className={assignedClasses.join(' ')}>React Person Manager</h1>
       <button ref={buttonRef} onClick={props.togglePersonsDiv} key={1}>
         Show/Hide Persons
       </button>
